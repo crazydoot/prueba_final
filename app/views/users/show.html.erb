@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h3>User Info</h3>
+      <%= @user.name %>
+      <%= @user.email %>
+
+
+
+      <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link" %>
+    </div>
+
+    <div class="col-sm-6">
+      <% if @user.locations.any? %>
+        <h3>Sucursales</h3>
+        <ul class="list-group">
+          <%= render @locations %>
+        </ul>
+        <br>
+      <% end %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= link_to "Nueva Sucursal", nueva_sucursal_path, class: "btn btn-primary" %>
+      <% if session[:user_id] %>
+      <%= select('user', 'id', Location.all.collect { |l| [ l.name, l.id ] }) %>
+      <% end %>
+    </div>
+  </div>
+</div>

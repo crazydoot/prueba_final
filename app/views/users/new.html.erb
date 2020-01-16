@@ -1,0 +1,35 @@
+<h1>Registrate</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@user) do |f| %>
+        <%= f.label :name, "Nombre" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :primer_apellido, "Primer Apellido" %>
+        <%= f.text_field :primer_apellido%>
+
+        <%= f.label :segundo_apellido, "Segundo Apellido" %>
+        <%= f.text_field :segundo_apellido%>
+
+        <%= f.label :rfc, "RFC" %>
+        <%= f.text_field :rfc %>
+
+        <%= f.label :nombre_empresa, " Nombre Empresa"%>
+        <%= f.text_field :nombre_empresa%>
+
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :password, "Contrasena"%>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation, "Confirmacion" %>
+        <%= f.password_field :password_confirmation %>
+
+        <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
