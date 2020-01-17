@@ -1,0 +1,27 @@
+<h1>Registro de Empleado:</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@worker) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :location_id, "Sucursal" %>
+        <%= f.collection_select :location_id, Location.all, :id, :name %>
+        <%= f.hidden_field :user_id, value: get_curr_user.id %>
+
+        <%= f.label :name, "Nombre" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :rfc, "RFC" %>
+        <%= f.text_field :rfc %>
+
+        <%= f.label :position, "Posicion del empleado"%>
+        <%= f.text_field :position%>
+
+
+        <%= f.submit "Registrar Empleado", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :locations, dependent: :destroy
+  has_many :employees, through: :locations
+  has_many :workers, through: :locations
 
   validates :name, presence: true, length: { maximum: 50 }
 

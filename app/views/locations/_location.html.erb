@@ -1,4 +1,4 @@
 <li id="location-<%= location.id %>" class="list-group-item d-flex justify-content-between align-items-center">
   <%= location.name %>
-  <span class="badge badge-primary badge-pill">3</span>
+  <div>Empleados: <span class="badge badge-info badge-pill"><%= location.workers.count %></span></div>
 </li>

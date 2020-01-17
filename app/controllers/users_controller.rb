@@ -2,8 +2,12 @@ class UsersController < ApplicationController
   include SessionsHelper
   helper :all
   def show
-    @user = User.find(params[:id])
-    @locations = @user.locations
+    if session[:user_id]
+      @user = User.find(params[:id])
+      @locations = @user.locations
+    else
+      redirect_to home_path
+    end
   end
 
   def new

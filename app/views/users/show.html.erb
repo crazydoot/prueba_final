@@ -22,9 +22,9 @@
     </div>
 
     <div class="col-sm-3">
-      <%= link_to "Nueva Sucursal", nueva_sucursal_path, class: "btn btn-primary" %>
       <% if session[:user_id] %>
-      <%= select('user', 'id', Location.all.collect { |l| [ l.name, l.id ] }) %>
+      <%= link_to "Registrar Sucursal", nueva_sucursal_path, class: "btn btn-primary" %>
+      <%= link_to "Registrat Empleado", users_registrar_empleado_path, class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

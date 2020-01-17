@@ -1,17 +1,16 @@
 class SessionsController < ApplicationController
   include SessionsHelper
 
+  def login
+  end
+
+  def signup
+  end
+
   def home
     if logged_in?
       redirect_to @curr_user
     end
-  end
-
-  def login
-  end
-
-
-  def signup
   end
 
   def create
@@ -27,8 +26,5 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
-
-private
-
 
 end
