@@ -1,4 +1,22 @@
-<li id="location-<%= location.id %>" class="list-group-item d-flex justify-content-between align-items-center">
-  <%= location.name %>
-  <div>Empleados: <span class="badge badge-info badge-pill"><%= location.workers.count %></span></div>
-</li>
+<div id="location-<%= location.id %>" class="card">
+  <div class="card-header" id="heading<%= location.id %>">
+    <h5 class="mb-0">
+      <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= location.id %>" aria-expanded="true" aria-controls="collapse<%= location.id %>">
+        <%= location.name %>
+      </button>
+    </h5>
+
+    <div>Empleados: <span class="badge badge-pill"><%= location.workers.count %></span></div>
+  </div>
+
+  <div id="collapse<%= location.id %>" class="collapse" aria-labelledby="heading<%= location.id %>" data-parent="#accordion">
+    <div class="card-body">
+      <ul class='list-group'>
+        <% location.workers.each do |worker| %>
+          <%= render partial: '/locations/workers_list', locals: { worker: worker }%>
+        <% end %>
+      </ul>
+      <%= link_to "Editar Sucursal", edit_location_path(location), class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+</div>

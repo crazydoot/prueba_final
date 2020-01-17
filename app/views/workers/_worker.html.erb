@@ -1,0 +1,8 @@
+<li class="list-group-item">
+  <span>Nombre: <%= worker.name %> </span>
+  <br>
+  <span>RFC:  <%= worker.rfc %> </span>
+  <%= link_to 'Editar Empleado', edit_worker_path(worker), class: 'btn float-right' %>
+  <br>
+  <span>Posicion: <%= worker.position %> </span>
+</li>

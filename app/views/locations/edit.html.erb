@@ -1,0 +1,44 @@
+<h1>Editar: <%= @location.name %> </h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <%= form_for(@location) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <%= f.label :name, "Nombre de Sucursal" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :street_name, "Nombre de Calle" %>
+        <%= f.text_field :street_name%>
+
+        <%= f.label :neighborhood, "Colonia" %>
+        <%= f.text_field :neighborhood%>
+
+        <%= f.label :ext_int, "Numero Exterior" %>
+        <%= f.number_field :ext_int %>
+
+        <%= f.label :int_num, "Numero Interio"%>
+        <%= f.number_field :int_num%>
+
+        <%= f.label :postal_code %>
+        <%= f.number_field :postal_code %>
+
+        <%= f.label :city, "Ciudad"%>
+        <%= f.text_field :city%>
+
+        <%= f.label :country, "Pais"%>
+        <%= f.text_field :country%>
+
+        <%= f.submit "Confirmar Sucursal", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
+    <ul class="list-group">
+      <%= render @location.workers %>
+    </ul>
+  </div>
+</div>

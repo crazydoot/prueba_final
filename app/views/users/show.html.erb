@@ -14,10 +14,11 @@
     <div class="col-sm-6">
       <% if @user.locations.any? %>
         <h3>Sucursales</h3>
-        <ul class="list-group">
+        <div id="accordion">
           <%= render @locations %>
-        </ul>
-        <br>
+        </div>
+
+
       <% end %>
     </div>
 
